@@ -13,7 +13,7 @@ public class Test {
             // 测试选择排序耗时
             // 时间复杂度: O(n^2)
             long time = SortingHelper.sort(data, "InsertionSort");
-            System.out.println("n: " + n + ", time: " + time + "ms");
+            System.out.println("n: " + n + ", InsertionSort time: " + time + "ms");
         }
     }
 
