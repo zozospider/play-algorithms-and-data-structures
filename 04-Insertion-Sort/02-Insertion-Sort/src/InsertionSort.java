@@ -5,7 +5,7 @@ public class InsertionSort {
     }
 
     // 插入排序
-    public static <E extends Comparable<E>> void sortV0(E[] arr) {
+    public static <E extends Comparable<E>> void sort(E[] arr) {
 
         // 循环不变量: arr[0, i) 已排序, arr[i, n) 未排序
         for (int i = 0; i < arr.length; i++) {

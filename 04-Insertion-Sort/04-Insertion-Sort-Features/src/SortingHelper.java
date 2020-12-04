@@ -25,9 +25,6 @@ public class SortingHelper {
         } else if ("SelectionSort2".equals(sortName)) {
             // 选择排序
             SelectionSort.sort2(arr);
-        } else if ("InsertionSortV0".equals(sortName)) {
-            // 插入排序
-            InsertionSort.sortV0(arr);
         } else if ("InsertionSort".equals(sortName)) {
             // 插入排序
             InsertionSort.sort(arr);
