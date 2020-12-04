@@ -1,4 +1,4 @@
-// 线性查找法
+// 线性查找
 public class LinearSearch {
 
     private LinearSearch() {
