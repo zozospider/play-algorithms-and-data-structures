@@ -1,4 +1,4 @@
-// 选择排序法 - 占用更多空间方式
+// 选择排序 - 占用更多空间方式
 public class SelectionSortMoreSpace {
 
     private SelectionSortMoreSpace() {

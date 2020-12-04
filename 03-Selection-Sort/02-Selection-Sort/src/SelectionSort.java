@@ -1,4 +1,4 @@
-// 选择排序法 - 不占用更多空间方式: 原地排序
+// 选择排序 - 不占用更多空间方式 (原地排序)
 public class SelectionSort {
 
     private SelectionSort() {

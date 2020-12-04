@@ -1,4 +1,4 @@
-// 选择排序法
+// 选择排序
 public class SelectionSort {
 
     private SelectionSort() {
