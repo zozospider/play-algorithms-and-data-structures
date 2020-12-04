@@ -25,9 +25,9 @@ public class SortingHelper {
         } else if ("SelectionSort2".equals(sortName)) {
             // 选择排序
             SelectionSort.sort2(arr);
-        } else if ("InsertionSort".equals(sortName)) {
+        } else if ("InsertionSortV0".equals(sortName)) {
             // 插入排序
-            InsertionSort.sort(arr);
+            InsertionSort.sortV0(arr);
         }
 
         // 记录结束时间 (单位: 毫秒)
