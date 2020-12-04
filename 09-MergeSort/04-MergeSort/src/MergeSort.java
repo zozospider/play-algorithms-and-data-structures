@@ -37,7 +37,7 @@ public class MergeSort {
     // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r) {
 
-        // 拷贝一个临时数组 (只拷贝 arr[l, r] 区间), 防止修改 arr 过程中原数据被覆盖.
+        // 拷贝一个临时数组 (只拷贝 arr[l, r] 区间), 防止修改 arr 过程中原数据被覆盖
         // 注意下标值对应关系:
         // arr[l] -> subArr[0]
         // arr[mid] -> subArr[mid - l]

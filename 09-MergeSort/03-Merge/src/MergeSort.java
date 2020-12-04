@@ -15,7 +15,7 @@ public class MergeSort {
     // (建议画图帮助理解各个步骤的执行顺序)
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r) {
 
-        // 拷贝一个临时数组 (只拷贝 arr[l, r] 区间), 防止修改 arr 过程中原数据被覆盖.
+        // 拷贝一个临时数组 (只拷贝 arr[l, r] 区间), 防止修改 arr 过程中原数据被覆盖
         // 注意下标值对应关系:
         // arr[l] -> subArr[0]
         // arr[mid] -> subArr[mid - l]
