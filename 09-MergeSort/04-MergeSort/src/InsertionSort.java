@@ -6,7 +6,7 @@ public class InsertionSort {
 
     // 插入排序
     // 时间复杂度: O(n^2)
-    // 当数组有序时, 时间复杂度: O(n)
+    // 最快复杂度 (有序时): O(n)
     public static <E extends Comparable<E>> void sortV0(E[] arr) {
 
         // 循环不变量: arr[0, i) 已排序, arr[i, n) 未排序
@@ -31,7 +31,7 @@ public class InsertionSort {
 
     // 插入排序 - 优化 (推荐)
     // 时间复杂度: O(n^2)
-    // 当数组有序时, 时间复杂度: O(n)
+    // 最快复杂度 (有序时): O(n)
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         // 循环不变量: arr[0, i) 已排序, arr[i, n) 未排序
