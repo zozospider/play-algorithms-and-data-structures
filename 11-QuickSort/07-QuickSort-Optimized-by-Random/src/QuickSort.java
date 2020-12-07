@@ -1,3 +1,5 @@
+import java.util.Random;
+
 // 快速排序
 public class QuickSort {
 
@@ -37,7 +39,13 @@ public class QuickSort {
     // 对 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
     private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
 
-        // 将标定点 v 初始化为当前区间的最左边的数: v = arr[l]
+        // 为了避免在处理有序数组 (或其他有规律的数组) 时, 递归深度增加到 n, 时间复杂度增加到 O(n^2), 不能将标定点的索引值设定为固定的索引位置的值
+        int randomOffset = new Random().nextInt(r - l + 1);
+        int randomIndex = l + randomOffset;
+        // 确保随机获取的标定点的索引值交换到到当前区间的最左边
+        swap(arr, l, randomIndex);
+
+        // 此时, 再将标定点 v 初始化为当前区间的最左边的数: v = arr[l]
         int p = l;
 
         // 循环不变量: arr[l+1...p] < v; arr[p+1...i] >= v
