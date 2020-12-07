@@ -14,7 +14,7 @@ public class MergeSort {
 
     // 归并排序: 对 arr 的区间 arr[l, r] 进行排序
     // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
-    private static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
+    public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
 
         if (l >= r) {
             return;
