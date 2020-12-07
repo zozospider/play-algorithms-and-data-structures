@@ -6,15 +6,13 @@ public class MergeSort {
     private MergeSort() {
     }
 
-    // 归并排序
-    // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         // 对 arr 进行排序
         sort(arr, 0, arr.length - 1);
     }
 
-    // 对 arr 的区间 arr[l, r] 进行排序
+    // 归并排序: 对 arr 的区间 arr[l, r] 进行排序
     // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
     private static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
 

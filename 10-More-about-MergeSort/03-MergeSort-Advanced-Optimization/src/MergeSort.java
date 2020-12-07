@@ -6,8 +6,6 @@ public class MergeSort {
     private MergeSort() {
     }
 
-    // 归并排序
-    // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         // 临时数组, 用于 merge 方法, 防止修改 arr 过程中原数据被覆盖
@@ -18,7 +16,7 @@ public class MergeSort {
         sort(arr, 0, arr.length - 1, tmpArr);
     }
 
-    // 对 arr 的区间 arr[l, r] 进行排序
+    // 归并排序: 对 arr 的区间 arr[l, r] 进行排序
     // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
     // 最快复杂度 (有序时): O(n) = O(2n) = O(n + n/2 + n/4 + n/8 + ... + 1)
     private static <E extends Comparable<E>> void sort(E[] arr, int l, int r, E[] tmpArr) {
