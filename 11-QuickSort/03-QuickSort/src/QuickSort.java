@@ -15,20 +15,20 @@ public class QuickSort {
             return;
         }
 
-        // 对 arr 中的区间 arr[l, r] 进行分区, 得到分区数 v 的索引
+        // 对 arr 中的区间 arr[l, r] 进行分区, 得到标定点 v 的索引
         int p = partition(arr, l, r);
 
-        // 对分区数 v 的左区间再 arr[l, p - 1] 进行分区
+        // 对标定点 v 的左区间再 arr[l, p - 1] 进行分区
         sort(arr, l, p - 1);
-        // 对分区数 v 的右区间再 arr[p + 1, r] 进行分区
+        // 对标定点 v 的右区间再 arr[p + 1, r] 进行分区
         sort(arr, p + 1, r);
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
-    // 对 arr 中的区间 arr[l, r] 进行分区, 确保分区数 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
+    // 对 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
     private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
 
-        // 将分区数 v 初始化为当前范围内的第一个数: v = arr[l]
+        // 将标定点 v 初始化为当前范围内的第一个数: v = arr[l]
         int p = l;
 
         // 循环不变量: arr[l+1...p] < v; arr[p+1...i] >= v
