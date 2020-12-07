@@ -15,9 +15,9 @@ public class Test {
             Integer[] dataA2 = Arrays.copyOf(dataA1, dataA1.length);
             // 时间复杂度: O(n^2)
             long timeA1 = SortingHelper.sort(dataA1, "SelectionSort");
+            System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeA1 + "ms");
             // 时间复杂度: O(n^2)
             long timeA2 = SortingHelper.sort(dataA2, "InsertionSort");
-            System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeA1 + "ms");
             System.out.println("n: " + n + ", Random Array, InsertionSort time: " + timeA2 + "ms");
 
             System.out.println("---");
@@ -27,9 +27,9 @@ public class Test {
             Integer[] dataB2 = Arrays.copyOf(dataB1, dataB1.length);
             // 时间复杂度: O(n^2)
             long timeB1 = SortingHelper.sort(dataB1, "SelectionSort");
+            System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeB1 + "ms");
             // 时间复杂度: O(n)
             long timeB2 = SortingHelper.sort(dataB2, "InsertionSort");
-            System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeB1 + "ms");
             System.out.println("n: " + n + ", Ordered Array, InsertionSort time: " + timeB2 + "ms");
 
             System.out.println();

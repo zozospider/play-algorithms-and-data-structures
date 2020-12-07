@@ -17,14 +17,14 @@ public class Test {
             Integer[] dataA4 = Arrays.copyOf(dataA1, dataA1.length);
             // 时间复杂度: O(n^2)
             long timeA1 = SortingHelper.sort(dataA1, "SelectionSort");
+            System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeA1 + "ms");
             // 时间复杂度: O(n^2)
             long timeA2 = SortingHelper.sort(dataA2, "InsertionSort");
+            System.out.println("n: " + n + ", Random Array, InsertionSort time: " + timeA2 + "ms");
             // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
             long timeA3 = SortingHelper.sort(dataA3, "MergeSort");
-            long timeA4 = SortingHelper.sort(dataA4, "QuickSort");
-            System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeA1 + "ms");
-            System.out.println("n: " + n + ", Random Array, InsertionSort time: " + timeA2 + "ms");
             System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeA3 + "ms");
+            long timeA4 = SortingHelper.sort(dataA4, "QuickSort");
             System.out.println("n: " + n + ", Random Array, QuickSort time: " + timeA4 + "ms");
 
             System.out.println("---");
@@ -36,14 +36,14 @@ public class Test {
             Integer[] dataB4 = Arrays.copyOf(dataB1, dataB1.length);
             // 时间复杂度: O(n^2)
             long timeB1 = SortingHelper.sort(dataB1, "SelectionSort");
+            System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeB1 + "ms");
             // 时间复杂度: O(n)
             long timeB2 = SortingHelper.sort(dataB2, "InsertionSort");
+            System.out.println("n: " + n + ", Ordered Array, InsertionSort time: " + timeB2 + "ms");
             // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
             long timeB3 = SortingHelper.sort(dataB3, "MergeSort");
-            long timeB4 = SortingHelper.sort(dataB4, "QuickSort");
-            System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeB1 + "ms");
-            System.out.println("n: " + n + ", Ordered Array, InsertionSort time: " + timeB2 + "ms");
             System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeB3 + "ms");
+            long timeB4 = SortingHelper.sort(dataB4, "QuickSort");
             System.out.println("n: " + n + ", Ordered Array, QuickSort time: " + timeB4 + "ms");
 
             System.out.println();
