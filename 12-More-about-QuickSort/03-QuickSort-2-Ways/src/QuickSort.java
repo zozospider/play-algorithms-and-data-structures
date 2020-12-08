@@ -131,10 +131,10 @@ public class QuickSort {
         // 循环不变量: arr[l+1...le-1] <= v; arr[ge+1...r] >= v
         while (true) {
 
-            while (le <= ge && arr[le].compareTo(arr[ge]) < 0) {
+            while (le <= ge && arr[le].compareTo(arr[l]) < 0) {
                 le++;
             }
-            while (ge >= le && arr[ge].compareTo(arr[le]) > 0) {
+            while (ge >= le && arr[ge].compareTo(arr[l]) > 0) {
                 ge--;
             }
             if (le >= ge) {
@@ -144,7 +144,7 @@ public class QuickSort {
             le++;
             ge--;
         }
-        swap(arr, le, ge);
+        swap(arr, l, ge);
         return ge;
     }
 
