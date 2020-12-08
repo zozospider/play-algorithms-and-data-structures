@@ -6,13 +6,13 @@ public class MergeSort {
     private MergeSort() {
     }
 
+    // 归并排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
-        // 对 arr 进行排序
         sort(arr, 0, arr.length - 1);
     }
 
-    // 归并排序: 对 arr 的区间 arr[l, r] 进行排序
+    // 归并排序: 对数组 arr 中的区间 arr[l, r] 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
 
         if (l >= r) {
@@ -23,17 +23,17 @@ public class MergeSort {
         // int mid = (r - l) / 2;
         int mid = l + (r - l) / 2;
 
-        // 对 arr 的左区间 arr[l, mid] 进行排序
+        // 对数组 arr 中的左区间 arr[l, mid] 进行排序
         sort(arr, l, mid);
-        // 对 arr 的右区间 arr[mid + 1, r] 进行排序
+        // 对数组 arr 中的右区间 arr[mid + 1, r] 进行排序
         sort(arr, mid + 1, r);
 
-        // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
+        // 将数组 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
         merge(arr, l, mid, r);
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
-    // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
+    // 将数组 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r) {
 
         // 拷贝一个临时数组 (只拷贝 arr[l, r] 区间), 防止修改 arr 过程中原数据被覆盖

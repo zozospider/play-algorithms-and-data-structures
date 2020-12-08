@@ -6,13 +6,13 @@ public class MergeSort {
     private MergeSort() {
     }
 
+    // 归并排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
-        // 对 arr 进行排序
         sort(arr, 0, arr.length - 1);
     }
 
-    // 归并排序: 对 arr 的区间 arr[l, r] 进行排序
+    // 归并排序: 对数组 arr 中的区间 arr[l, r] 进行排序
     // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
     // 最快复杂度 (有序时): O(n) = O(2n) = O(n + n/2 + n/4 + n/8 + ... + 1)
     public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
@@ -21,7 +21,6 @@ public class MergeSort {
         // 将 tmpArr 传入 merge 方法的方式, 可以避免每次在 merge 方法中创建临时数组对象, 因此该方式更优
         E[] tmpArr = Arrays.copyOfRange(arr, l, r + 1);
 
-        // 对 arr 进行排序
         sort(arr, 0, arr.length - 1, tmpArr);
     }
 
@@ -44,12 +43,12 @@ public class MergeSort {
         // int mid = (r - l) / 2;
         int mid = l + (r - l) / 2;
 
-        // 对 arr 的左区间 arr[l, mid] 进行排序
+        // 对数组 arr 中的左区间 arr[l, mid] 进行排序
         sort(arr, l, mid, tmpArr);
-        // 对 arr 的右区间 arr[mid + 1, r] 进行排序
+        // 对数组 arr 中的右区间 arr[mid + 1, r] 进行排序
         sort(arr, mid + 1, r, tmpArr);
 
-        // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
+        // 将数组 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
         // 只有在左区间存在比右区间大的元素时, 才需要排序
         if (arr[mid].compareTo(arr[mid + 1]) > 0) {
             merge(arr, l, mid, r, tmpArr);
@@ -57,7 +56,7 @@ public class MergeSort {
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
-    // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
+    // 将数组 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
     // 时间复杂度: O(n)
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r, E[] tmpArr) {
 

@@ -11,7 +11,7 @@ public class MergeSort {
     }
 
     // 此方法的宏观语义 (重点关注):
-    // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
+    // 将数组 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
     // (建议画图帮助理解各个步骤的执行顺序)
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r) {
 
