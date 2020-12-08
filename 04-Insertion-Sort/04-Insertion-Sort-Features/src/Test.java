@@ -5,7 +5,7 @@ public class Test {
     // 测试不同数据规模, 不同排序方式, 不同排序算法的耗时对比
     public static void main(String[] args) {
 
-        int[] dataSizes = {10_000, 100_000};
+        int[] dataSizes = {10_000, 50_000};
 
         for (int n : dataSizes) {
 

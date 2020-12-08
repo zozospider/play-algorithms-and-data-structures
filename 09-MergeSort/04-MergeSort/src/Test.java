@@ -3,7 +3,7 @@ public class Test {
     public static void main(String[] args) {
 
         // 测试不同数据规模的归并排序耗时
-        int[] dataSizes = {10_000, 100_000};
+        int[] dataSizes = {10_000, 50_000};
 
         for (int n : dataSizes) {
 

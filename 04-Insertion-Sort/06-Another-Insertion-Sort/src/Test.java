@@ -3,7 +3,7 @@ public class Test {
     // 测试不同数据规模的插入排序耗时
     public static void main(String[] args) {
 
-        int[] dataSizes = {10_000, 100_000};
+        int[] dataSizes = {10_000, 50_000};
 
         for (int n : dataSizes) {
 
