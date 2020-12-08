@@ -4,12 +4,13 @@ public class InsertionSort {
     private InsertionSort() {
     }
 
+    // 插入排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         sort(arr, 0, arr.length - 1);
     }
 
-    // 插入排序 (推荐): 对 arr 中的区间 arr[l, r] 进行排序
+    // 插入排序: 对数组 arr 中的区间 arr[l, r] 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
 
         // 循环不变量: arr[l, i) 已排序, arr[i, r] 未排序

@@ -4,12 +4,13 @@ public class InsertionSort {
     private InsertionSort() {
     }
 
+    // 插入排序 (推荐): 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         sort(arr, 0, arr.length - 1);
     }
 
-    // 插入排序 (推荐): 对 arr 中的区间 arr[l, r] 进行排序
+    // 插入排序 (推荐): 对数组 arr 中的区间 arr[l, r] 进行排序
     // 时间复杂度: O(n^2)
     // 最快复杂度 (有序时): O(n)
     public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
@@ -41,12 +42,13 @@ public class InsertionSort {
         }
     }
 
+    // 插入排序 (另一种方式: 从后往前): 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort2(E[] arr) {
 
         sort2(arr, 0, arr.length - 1);
     }
 
-    // 插入排序 (另一种方式: 从后往前): 对 arr 中的区间 arr[l, r] 进行排序
+    // 插入排序 (另一种方式: 从后往前): 对数组 arr 中的区间 arr[l, r] 进行排序
     // 时间复杂度: O(n^2)
     public static <E extends Comparable<E>> void sort2(E[] arr, int l, int r) {
 

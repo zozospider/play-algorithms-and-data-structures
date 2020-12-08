@@ -4,7 +4,7 @@ public class InsertionSort {
     private InsertionSort() {
     }
 
-    // 插入排序
+    // 插入排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         // 循环不变量: arr[0, i) 已排序, arr[i, n) 未排序
