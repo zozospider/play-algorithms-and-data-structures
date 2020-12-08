@@ -14,6 +14,8 @@ public class Test {
             Integer[] dataR2 = Arrays.copyOf(dataR1, dataR1.length);
             Integer[] dataR3 = Arrays.copyOf(dataR1, dataR1.length);
             Integer[] dataR4 = Arrays.copyOf(dataR1, dataR1.length);
+            Integer[] dataR5 = Arrays.copyOf(dataR1, dataR1.length);
+
             // SelectionSort
             // 时间复杂度: O(n^2)
             long timeR1 = SortingHelper.sort(dataR1, "SelectionSort");
@@ -30,8 +32,10 @@ public class Test {
             System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeR3 + "ms");
 
             // QuickSort
-            long timeR4 = SortingHelper.sort(dataR4, "QuickSort");
-            System.out.println("n: " + n + ", Random Array, QuickSort time: " + timeR4 + "ms");
+            long timeR4 = SortingHelper.sort(dataR4, "QuickSort1Way");
+            System.out.println("n: " + n + ", Random Array, QuickSort1Way time: " + timeR4 + "ms");
+            long timeR5 = SortingHelper.sort(dataR5, "QuickSort2Ways");
+            System.out.println("n: " + n + ", Random Array, QuickSort2Ways time: " + timeR5 + "ms");
 
             System.out.println("---");
 
@@ -40,6 +44,7 @@ public class Test {
             Integer[] dataO2 = Arrays.copyOf(dataO1, dataO1.length);
             Integer[] dataO3 = Arrays.copyOf(dataO1, dataO1.length);
             Integer[] dataO4 = Arrays.copyOf(dataO1, dataO1.length);
+            Integer[] dataO5 = Arrays.copyOf(dataO1, dataO1.length);
             // SelectionSort
             // 时间复杂度: O(n^2)
             long timeO1 = SortingHelper.sort(dataO1, "SelectionSort");
@@ -56,8 +61,39 @@ public class Test {
             System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeO3 + "ms");
 
             // QuickSort
-            long timeO4 = SortingHelper.sort(dataO4, "QuickSort");
-            System.out.println("n: " + n + ", Ordered Array, QuickSort time: " + timeO4 + "ms");
+            long timeO4 = SortingHelper.sort(dataO4, "QuickSort1Way");
+            System.out.println("n: " + n + ", Ordered Array, QuickSort1Way time: " + timeO4 + "ms");
+            long timeO5 = SortingHelper.sort(dataO5, "QuickSort2Ways");
+            System.out.println("n: " + n + ", Ordered Array, QuickSort2Ways time: " + timeO5 + "ms");
+
+            System.out.println("---");
+
+            // 所有元素都相同 (都为 0) 的数组耗时对比
+            Integer[] dataS1 = ArrayGenerator.generateRandomArray(n, 1);
+            Integer[] dataS2 = Arrays.copyOf(dataS1, dataS1.length);
+            Integer[] dataS3 = Arrays.copyOf(dataS1, dataS1.length);
+            Integer[] dataS4 = Arrays.copyOf(dataS1, dataS1.length);
+            Integer[] dataS5 = Arrays.copyOf(dataS1, dataS1.length);
+            // SelectionSort
+            // 时间复杂度: O(n^2)
+            long timeS1 = SortingHelper.sort(dataS1, "SelectionSort");
+            System.out.println("n: " + n + ", Same Value Array, SelectionSort time: " + timeS1 + "ms");
+
+            // InsertionSort
+            // 时间复杂度: O(n)
+            long timeS2 = SortingHelper.sort(dataS2, "InsertionSort");
+            System.out.println("n: " + n + ", Same Value Array, InsertionSort time: " + timeS2 + "ms");
+
+            // MergeSort
+            // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
+            long timeS3 = SortingHelper.sort(dataS3, "MergeSort");
+            System.out.println("n: " + n + ", Same Value Array, MergeSort time: " + timeS3 + "ms");
+
+            // QuickSort
+            long timeS4 = SortingHelper.sort(dataS4, "QuickSort1Way");
+            System.out.println("n: " + n + ", Same Value Array, QuickSort1Way time: " + timeS4 + "ms");
+            long timeS5 = SortingHelper.sort(dataS5, "QuickSort2Ways");
+            System.out.println("n: " + n + ", Same Value Array, QuickSort2Ways time: " + timeS5 + "ms");
 
             System.out.println();
             System.out.println("------");

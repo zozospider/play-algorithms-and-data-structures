@@ -10,34 +10,44 @@ public class Test {
         for (int n : dataSizes) {
 
             // 无序数组耗时对比
-            Integer[] dataA1 = ArrayGenerator.generateRandomArray(n, n);
-            Integer[] dataA2 = Arrays.copyOf(dataA1, dataA1.length);
-            Integer[] dataA3 = Arrays.copyOf(dataA1, dataA1.length);
+            Integer[] dataR1 = ArrayGenerator.generateRandomArray(n, n);
+            Integer[] dataR2 = Arrays.copyOf(dataR1, dataR1.length);
+            Integer[] dataR3 = Arrays.copyOf(dataR1, dataR1.length);
+            // SelectionSort
             // 时间复杂度: O(n^2)
-            long timeA1 = SortingHelper.sort(dataA1, "SelectionSort");
-            System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeA1 + "ms");
+            long timeR1 = SortingHelper.sort(dataR1, "SelectionSort");
+            System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeR1 + "ms");
+
+            // InsertionSort
             // 时间复杂度: O(n^2)
-            long timeA2 = SortingHelper.sort(dataA2, "InsertionSort");
-            System.out.println("n: " + n + ", Random Array, InsertionSort time: " + timeA2 + "ms");
+            long timeR2 = SortingHelper.sort(dataR2, "InsertionSort");
+            System.out.println("n: " + n + ", Random Array, InsertionSort time: " + timeR2 + "ms");
+
+            // MergeSort
             // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
-            long timeA3 = SortingHelper.sort(dataA3, "MergeSort");
-            System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeA3 + "ms");
+            long timeR3 = SortingHelper.sort(dataR3, "MergeSort");
+            System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeR3 + "ms");
 
             System.out.println("---");
 
             // 有序数组耗时对比
-            Integer[] dataB1 = ArrayGenerator.generateOrderedArray(n);
-            Integer[] dataB2 = Arrays.copyOf(dataB1, dataB1.length);
-            Integer[] dataB3 = Arrays.copyOf(dataB1, dataB1.length);
+            Integer[] dataO1 = ArrayGenerator.generateOrderedArray(n);
+            Integer[] dataO2 = Arrays.copyOf(dataO1, dataO1.length);
+            Integer[] dataO3 = Arrays.copyOf(dataO1, dataO1.length);
+            // SelectionSort
             // 时间复杂度: O(n^2)
-            long timeB1 = SortingHelper.sort(dataB1, "SelectionSort");
-            System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeB1 + "ms");
+            long timeO1 = SortingHelper.sort(dataO1, "SelectionSort");
+            System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeO1 + "ms");
+
+            // InsertionSort
             // 时间复杂度: O(n)
-            long timeB2 = SortingHelper.sort(dataB2, "InsertionSort");
-            System.out.println("n: " + n + ", Ordered Array, InsertionSort time: " + timeB2 + "ms");
+            long timeO2 = SortingHelper.sort(dataO2, "InsertionSort");
+            System.out.println("n: " + n + ", Ordered Array, InsertionSort time: " + timeO2 + "ms");
+
+            // MergeSort
             // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
-            long timeB3 = SortingHelper.sort(dataB3, "MergeSort");
-            System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeB3 + "ms");
+            long timeO3 = SortingHelper.sort(dataO3, "MergeSort");
+            System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeO3 + "ms");
 
             System.out.println();
             System.out.println("------");

@@ -10,7 +10,7 @@ public class Test {
             // 生成一个长度为 n 的随机数组
             Integer[] data = ArrayGenerator.generateRandomArray(n, n);
 
-            // 测试插入排序耗时
+            // InsertionSort2
             // 时间复杂度: O(n^2)
             long time = SortingHelper.sort(data, "InsertionSort2");
             System.out.println("n: " + n + ", InsertionSort2 time: " + time + "ms");
