@@ -4,12 +4,13 @@ public class SelectionSort {
     private SelectionSort() {
     }
 
+    // 选择排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
 
         sort(arr, 0, arr.length - 1);
     }
 
-    // 选择排序: 对 arr 中的区间 arr[l, r] 进行排序
+    // 选择排序: 对数组 arr 中的区间 arr[l, r] 进行排序
     // 时间复杂度: O(1/2 * n^2 + 1/2 * n) = O(n^2)
     public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
 
