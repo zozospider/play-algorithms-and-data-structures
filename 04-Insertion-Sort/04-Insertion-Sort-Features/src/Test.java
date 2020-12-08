@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Test {
 
-    // 测试无序和有序的不同数据规模下, 插入排序和选择排序的耗时对比
+    // 测试不同数据规模, 不同排序方式, 不同排序算法的耗时对比
     public static void main(String[] args) {
 
         int[] dataSizes = {10_000, 100_000};
