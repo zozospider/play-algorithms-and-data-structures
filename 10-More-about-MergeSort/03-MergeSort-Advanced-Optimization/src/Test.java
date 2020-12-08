@@ -9,8 +9,7 @@ public class Test {
 
         for (int n : dataSizes) {
 
-            // 无序数组插入排序和选择排序耗时对比
-            // 生成一个长度为 n 的随机数组
+            // 无序数组耗时对比
             Integer[] dataA1 = ArrayGenerator.generateRandomArray(n, n);
             Integer[] dataA2 = Arrays.copyOf(dataA1, dataA1.length);
             Integer[] dataA3 = Arrays.copyOf(dataA1, dataA1.length);
@@ -26,7 +25,7 @@ public class Test {
 
             System.out.println("---");
 
-            // 有序数组插入排序和选择排序耗时对比
+            // 有序数组耗时对比
             Integer[] dataB1 = ArrayGenerator.generateOrderedArray(n);
             Integer[] dataB2 = Arrays.copyOf(dataB1, dataB1.length);
             Integer[] dataB3 = Arrays.copyOf(dataB1, dataB1.length);
