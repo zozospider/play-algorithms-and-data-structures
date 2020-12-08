@@ -1,3 +1,5 @@
+import java.util.Random;
+
 // 快速排序
 public class QuickSort {
 
@@ -6,11 +8,21 @@ public class QuickSort {
 
     // 快速排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
-        sort(arr, 0, arr.length - 1);
+        // sort1way(arr, 0, arr.length - 1);
+        sort2ways(arr, 0, arr.length - 1);
     }
 
-    // 快速排序: 对数组 arr 中的区间 arr[l, r] 进行排序
-    public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
+    // 快速排序 (单路): 对数组 arr 进行排序
+    public static <E extends Comparable<E>> void sort1way(E[] arr) {
+        sort1way(arr, 0, arr.length - 1);
+    }
+
+    // 快速排序 (单路): 对数组 arr 中的区间 arr[l, r] 进行排序
+    public static <E extends Comparable<E>> void sort1way(E[] arr, int l, int r) {
+        sort1way(arr, l, r, new Random());
+    }
+
+    private static <E extends Comparable<E>> void sort1way(E[] arr, int l, int r, Random random) {
 
         if (l >= r) {
             return;
@@ -26,19 +38,25 @@ public class QuickSort {
         */
 
         // 对数组 arr 中的区间 arr[l, r] 进行分区, 得到标定点 v 的索引
-        int p = partition(arr, l, r);
+        int p = partition1way(arr, l, r, random);
 
         // 对标定点 v 的左区间再 arr[l, p - 1] 进行分区
-        sort(arr, l, p - 1);
+        sort1way(arr, l, p - 1, random);
         // 对标定点 v 的右区间再 arr[p + 1, r] 进行分区
-        sort(arr, p + 1, r);
+        sort1way(arr, p + 1, r, random);
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
     // 对数组 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
-    private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
+    private static <E extends Comparable<E>> int partition1way(E[] arr, int l, int r, Random random) {
 
-        // 将标定点 v 初始化为当前区间的最左边的数: v = arr[l]
+        // 为了避免在处理有序数组 (或其他有规律的数组) 时, 递归深度增加到 n, 时间复杂度增加到 O(n^2), 不能将标定点的索引值设定为固定的索引位置的值
+        int randomOffset = random.nextInt(r - l + 1);
+        int randomIndex = l + randomOffset;
+        // 确保随机获取的标定点的索引值交换到到当前区间的最左边
+        swap(arr, l, randomIndex);
+
+        // 此时, 再将标定点 v 初始化为当前区间的最左边的数: v = arr[l]
         int p = l;
 
         // 循环不变量: arr[l+1...p] < v; arr[p+1...i] >= v
@@ -61,6 +79,20 @@ public class QuickSort {
         swap(arr, l, p);
         // 返回 v 的索引
         return p;
+    }
+
+    // 快速排序 (双路): 对数组 arr 进行排序
+    public static <E extends Comparable<E>> void sort2ways(E[] arr) {
+        sort2ways(arr, 0, arr.length - 1);
+    }
+
+    // 快速排序 (双路): 对数组 arr 中的区间 arr[l, r] 进行排序
+    public static <E extends Comparable<E>> void sort2ways(E[] arr, int l, int r) {
+        sort2ways(arr, l, r, new Random());
+    }
+
+    private static <E extends Comparable<E>> void sort2ways(E[] arr, int l, int r, Random random) {
+
     }
 
     private static <E> void swap(E[] arr, int i, int j) {

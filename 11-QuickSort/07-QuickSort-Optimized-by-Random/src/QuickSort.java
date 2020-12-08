@@ -6,11 +6,12 @@ public class QuickSort {
     private QuickSort() {
     }
 
+    // 快速排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
         sort(arr, 0, arr.length - 1);
     }
 
-    // 快速排序: 对 arr 的区间 arr[l, r] 进行排序
+    // 快速排序: 对数组 arr 中的区间 arr[l, r] 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
 
         if (l >= r) {
@@ -26,7 +27,7 @@ public class QuickSort {
         }
         */
 
-        // 对 arr 中的区间 arr[l, r] 进行分区, 得到标定点 v 的索引
+        // 对数组 arr 中的区间 arr[l, r] 进行分区, 得到标定点 v 的索引
         int p = partition(arr, l, r);
 
         // 对标定点 v 的左区间再 arr[l, p - 1] 进行分区
@@ -36,7 +37,7 @@ public class QuickSort {
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
-    // 对 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
+    // 对数组 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
     private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
 
         // 为了避免在处理有序数组 (或其他有规律的数组) 时, 递归深度增加到 n, 时间复杂度增加到 O(n^2), 不能将标定点的索引值设定为固定的索引位置的值
