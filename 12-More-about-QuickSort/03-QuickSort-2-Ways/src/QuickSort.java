@@ -50,13 +50,13 @@ public class QuickSort {
     // 对数组 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
     private static <E extends Comparable<E>> int partition1way(E[] arr, int l, int r, Random random) {
 
+        // 初始化标定点:
         // 为了避免在处理有序数组 (或其他有规律的数组) 时, 递归深度增加到 n, 时间复杂度增加到 O(n^2), 不能将标定点的索引值设定为固定的索引位置的值
         int randomOffset = random.nextInt(r - l + 1);
         int randomIndex = l + randomOffset;
-        // 确保随机获取的标定点的索引值交换到到当前区间的最左边
+        // 确保随机获取的标定点的索引值交换到到当前区间的最左边, 交换值后, 标定点 v 就是当前区间的最左边的数: v = arr[l]
         swap(arr, l, randomIndex);
 
-        // 此时, 再将标定点 v 初始化为当前区间的最左边的数: v = arr[l]
         int p = l;
 
         // 循环不变量: arr[l+1...p] < v; arr[p+1...i] >= v
@@ -93,6 +93,59 @@ public class QuickSort {
 
     private static <E extends Comparable<E>> void sort2ways(E[] arr, int l, int r, Random random) {
 
+        if (l >= r) {
+            return;
+        }
+
+        /* 优化思路
+        // 在要排序的区间较小时, 因为快速排序的 partition 操作执行步骤较多, 反而使得插入排序更有优势
+        // 该结论在大部分解释型语言有效, 编译型语言对递归有优化, 可能和预期的结果不一样, 因此此处不采用该方法
+        if (r - l <= 15) {
+            InsertionSort.sort(arr, l, r);
+            return;
+        }
+        */
+
+        // 对数组 arr 中的区间 arr[l, r] 进行分区, 得到标定点 v 的索引
+        int p = partition2ways(arr, l, r, random);
+
+        // 对标定点 v 的左区间再 arr[l, p - 1] 进行分区
+        sort2ways(arr, l, p - 1, random);
+        // 对标定点 v 的右区间再 arr[p + 1, r] 进行分区
+        sort2ways(arr, p + 1, r, random);
+    }
+
+    // 此方法的宏观语义 (建议画图帮助理解):
+    // 对数组 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
+    private static <E extends Comparable<E>> int partition2ways(E[] arr, int l, int r, Random random) {
+
+        // 初始化标定点:
+        // 为了避免在处理有序数组 (或其他有规律的数组) 时, 递归深度增加到 n, 时间复杂度增加到 O(n^2), 不能将标定点的索引值设定为固定的索引位置的值
+        int randomOffset = random.nextInt(r - l + 1);
+        int randomIndex = l + randomOffset;
+        // 确保随机获取的标定点的索引值交换到到当前区间的最左边, 交换值后, 标定点 v 就是当前区间的最左边的数: v = arr[l]
+        swap(arr, l, randomIndex);
+
+        int le = l + 1;
+        int ge = r;
+        // 循环不变量: arr[l+1...le-1] <= v; arr[ge+1...r] >= v
+        while (true) {
+
+            while (le <= ge && arr[le].compareTo(arr[ge]) < 0) {
+                le++;
+            }
+            while (ge >= le && arr[ge].compareTo(arr[le]) > 0) {
+                ge--;
+            }
+            if (le >= ge) {
+                break;
+            }
+            swap(arr, le, ge);
+            le++;
+            ge--;
+        }
+        swap(arr, le, ge);
+        return ge;
     }
 
     private static <E> void swap(E[] arr, int i, int j) {

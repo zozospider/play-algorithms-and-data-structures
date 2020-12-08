@@ -38,7 +38,8 @@ public class QuickSort {
     // 对数组 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
     private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
 
-        // 将标定点 v 初始化为当前区间的最左边的数: v = arr[l]
+        // 初始化标定点:
+        // 将标定点 v 设置为当前区间的最左边的数: v = arr[l]
         int p = l;
 
         // 循环不变量: arr[l+1...p] < v; arr[p+1...i] >= v
