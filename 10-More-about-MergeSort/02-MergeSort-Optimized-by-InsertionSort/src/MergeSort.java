@@ -39,7 +39,7 @@ public class MergeSort {
         // 对数组 arr 中的右区间 arr[mid + 1, r] 进行排序
         sort(arr, mid + 1, r);
 
-        // 将 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
+        // 将数组 arr 中的两个有序区间 arr[l, mid] 和 arr[mid + 1, r] 合并调整成一个有序区间 arr[l, r]
         // 只有在左区间存在比右区间大的元素时, 才需要排序
         if (arr[mid].compareTo(arr[mid + 1]) > 0) {
             merge(arr, l, mid, r);
