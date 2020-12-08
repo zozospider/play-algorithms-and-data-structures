@@ -34,10 +34,7 @@ public class SortingHelper {
         } else if ("MergeSort".equals(sortName)) {
             // 归并排序
             MergeSort.sort(arr);
-        } else if ("QuickSort".equals(sortName)) {
-            // 快速排序
-            QuickSort.sort(arr);
-        }else if ("QuickSort1Way".equals(sortName)) {
+        } else if ("QuickSort1Way".equals(sortName)) {
             // 快速排序
             QuickSort.sort1way(arr);
         } else if ("QuickSort2Ways".equals(sortName)) {

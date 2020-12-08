@@ -8,8 +8,8 @@ public class QuickSort {
 
     // 快速排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
-        // sort1way(arr, 0, arr.length - 1);
-        sort2ways(arr, 0, arr.length - 1);
+        // sort1way(arr);
+        sort2ways(arr);
     }
 
     // 快速排序 (单路): 对数组 arr 进行排序

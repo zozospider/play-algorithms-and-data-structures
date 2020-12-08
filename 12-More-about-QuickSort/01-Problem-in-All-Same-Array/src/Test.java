@@ -5,7 +5,7 @@ public class Test {
     // 测试不同数据规模, 不同排序方式, 不同排序算法的耗时对比
     public static void main(String[] args) {
 
-        int[] dataSizes = {10_000, 100_000};
+        int[] dataSizes = {10_000, 50_000};
 
         for (int n : dataSizes) {
 
@@ -31,8 +31,8 @@ public class Test {
             System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeR3 + "ms");
 
             // QuickSort
-            long timeR4 = SortingHelper.sort(dataR4, "QuickSort");
-            System.out.println("n: " + n + ", Random Array, QuickSort time: " + timeR4 + "ms");
+            long timeR4 = SortingHelper.sort(dataR4, "QuickSort1Way");
+            System.out.println("n: " + n + ", Random Array, QuickSort1Way time: " + timeR4 + "ms");
 
             System.out.println("---");
 
@@ -56,9 +56,10 @@ public class Test {
             // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
             long timeO3 = SortingHelper.sort(dataO3, "MergeSort");
             System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeO3 + "ms");
+
             // QuickSort
-            long timeO4 = SortingHelper.sort(dataO4, "QuickSort");
-            System.out.println("n: " + n + ", Ordered Array, QuickSort time: " + timeO4 + "ms");
+            long timeO4 = SortingHelper.sort(dataO4, "QuickSort1Way");
+            System.out.println("n: " + n + ", Ordered Array, QuickSort1Way time: " + timeO4 + "ms");
 
             System.out.println("---");
 
@@ -82,9 +83,14 @@ public class Test {
             // 时间复杂度 (忽略底数): O(n log n) = O(n log 2 n)
             long timeS3 = SortingHelper.sort(dataS3, "MergeSort");
             System.out.println("n: " + n + ", Same Value Array, MergeSort time: " + timeS3 + "ms");
+
             // QuickSort
-            long timeS4 = SortingHelper.sort(dataS4, "QuickSort");
-            System.out.println("n: " + n + ", Same Value Array, QuickSort time: " + timeS4 + "ms");
+            try {
+                long timeS4 = SortingHelper.sort(dataS4, "QuickSort1Way");
+                System.out.println("n: " + n + ", Same Value Array, QuickSort1Way time: " + timeS4 + "ms");
+            } catch (StackOverflowError error) {
+                System.out.println("n: " + n + ", Same Value Array, QuickSort1Way get a StackOverflowError!");
+            }
 
             System.out.println();
             System.out.println("------");

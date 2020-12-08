@@ -5,7 +5,7 @@ public class Test {
     // 测试不同数据规模, 不同排序方式, 不同排序算法的耗时对比
     public static void main(String[] args) {
 
-        int[] dataSizes = {10_000, 100_000};
+        int[] dataSizes = {10_000, 50_000};
 
         for (int n : dataSizes) {
 
@@ -92,8 +92,13 @@ public class Test {
             System.out.println("n: " + n + ", Same Value Array, MergeSort time: " + timeS3 + "ms");
 
             // QuickSort
-            long timeS4 = SortingHelper.sort(dataS4, "QuickSort1Way");
-            System.out.println("n: " + n + ", Same Value Array, QuickSort1Way time: " + timeS4 + "ms");
+            try {
+                long timeS4 = SortingHelper.sort(dataS4, "QuickSort1Way");
+                System.out.println("n: " + n + ", Same Value Array, QuickSort1Way time: " + timeS4 + "ms");
+            } catch (StackOverflowError error) {
+                System.out.println("n: " + n + ", Same Value Array, QuickSort1Way get a StackOverflowError!");
+            }
+
             long timeS5 = SortingHelper.sort(dataS5, "QuickSort2Ways");
             System.out.println("n: " + n + ", Same Value Array, QuickSort2Ways time: " + timeS5 + "ms");
 

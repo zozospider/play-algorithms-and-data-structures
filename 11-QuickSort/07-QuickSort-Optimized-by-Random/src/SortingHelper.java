@@ -34,9 +34,9 @@ public class SortingHelper {
         } else if ("MergeSort".equals(sortName)) {
             // 归并排序
             MergeSort.sort(arr);
-        } else if ("QuickSort".equals(sortName)) {
+        } else if ("QuickSort1Way".equals(sortName)) {
             // 快速排序
-            QuickSort.sort(arr);
+            QuickSort.sort1way(arr);
         }
 
         // 记录结束时间 (单位: 毫秒)

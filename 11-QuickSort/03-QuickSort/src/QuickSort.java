@@ -6,28 +6,33 @@ public class QuickSort {
 
     // 快速排序: 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort(E[] arr) {
-        sort(arr, 0, arr.length - 1);
+        sort1way(arr);
     }
 
-    // 快速排序: 对数组 arr 中的区间 arr[l, r] 进行排序
-    public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
+    // 快速排序 (单路): 对数组 arr 进行排序
+    public static <E extends Comparable<E>> void sort1way(E[] arr) {
+        sort1way(arr, 0, arr.length - 1);
+    }
+
+    // 快速排序 (单路): 对数组 arr 中的区间 arr[l, r] 进行排序
+    public static <E extends Comparable<E>> void sort1way(E[] arr, int l, int r) {
 
         if (l >= r) {
             return;
         }
 
         // 对数组 arr 中的区间 arr[l, r] 进行分区, 得到标定点 v 的索引
-        int p = partition(arr, l, r);
+        int p = partition1way(arr, l, r);
 
         // 对标定点 v 的左区间再 arr[l, p - 1] 进行分区
-        sort(arr, l, p - 1);
+        sort1way(arr, l, p - 1);
         // 对标定点 v 的右区间再 arr[p + 1, r] 进行分区
-        sort(arr, p + 1, r);
+        sort1way(arr, p + 1, r);
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
     // 对数组 arr 中的区间 arr[l, r] 进行分区, 确保标定点 v 左边的值小于 v, 右边的值大于 v, 并返回 v 对应的索引
-    private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
+    private static <E extends Comparable<E>> int partition1way(E[] arr, int l, int r) {
 
         // 初始化标定点:
         // 将标定点 v 设置为当前范围内的第一个数: v = arr[l]
