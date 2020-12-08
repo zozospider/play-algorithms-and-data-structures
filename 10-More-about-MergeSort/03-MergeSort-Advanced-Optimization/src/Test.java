@@ -13,6 +13,7 @@ public class Test {
             Integer[] dataR1 = ArrayGenerator.generateRandomArray(n, n);
             Integer[] dataR2 = Arrays.copyOf(dataR1, dataR1.length);
             Integer[] dataR3 = Arrays.copyOf(dataR1, dataR1.length);
+
             // SelectionSort
             // 时间复杂度: O(n^2)
             long timeR1 = SortingHelper.sort(dataR1, "SelectionSort");
@@ -34,6 +35,7 @@ public class Test {
             Integer[] dataO1 = ArrayGenerator.generateOrderedArray(n);
             Integer[] dataO2 = Arrays.copyOf(dataO1, dataO1.length);
             Integer[] dataO3 = Arrays.copyOf(dataO1, dataO1.length);
+
             // SelectionSort
             // 时间复杂度: O(n^2)
             long timeO1 = SortingHelper.sort(dataO1, "SelectionSort");

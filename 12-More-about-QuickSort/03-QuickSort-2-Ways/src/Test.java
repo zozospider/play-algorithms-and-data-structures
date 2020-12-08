@@ -45,6 +45,7 @@ public class Test {
             Integer[] dataO3 = Arrays.copyOf(dataO1, dataO1.length);
             Integer[] dataO4 = Arrays.copyOf(dataO1, dataO1.length);
             Integer[] dataO5 = Arrays.copyOf(dataO1, dataO1.length);
+
             // SelectionSort
             // 时间复杂度: O(n^2)
             long timeO1 = SortingHelper.sort(dataO1, "SelectionSort");
@@ -74,6 +75,7 @@ public class Test {
             Integer[] dataS3 = Arrays.copyOf(dataS1, dataS1.length);
             Integer[] dataS4 = Arrays.copyOf(dataS1, dataS1.length);
             Integer[] dataS5 = Arrays.copyOf(dataS1, dataS1.length);
+
             // SelectionSort
             // 时间复杂度: O(n^2)
             long timeS1 = SortingHelper.sort(dataS1, "SelectionSort");
