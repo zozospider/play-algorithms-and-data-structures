@@ -40,39 +40,39 @@ public class MergeSort {
         */
 
         // 求此区间的中间索引位置
-        // int mid = (right - left) / 2;
-        int mid = left + (right - left) / 2;
+        // int middle = (right - left) / 2;
+        int middle = left + (right - left) / 2;
 
-        // 对数组 arr 中的左区间 arr[left, mid] 进行排序
-        sort(arr, left, mid, tmpArr);
-        // 对数组 arr 中的右区间 arr[mid + 1, right] 进行排序
-        sort(arr, mid + 1, right, tmpArr);
+        // 对数组 arr 中的左区间 arr[left, middle] 进行排序
+        sort(arr, left, middle, tmpArr);
+        // 对数组 arr 中的右区间 arr[middle + 1, right] 进行排序
+        sort(arr, middle + 1, right, tmpArr);
 
-        // 将数组 arr 中的两个有序区间 arr[left, mid] 和 arr[mid + 1, right] 合并调整成一个有序区间 arr[left, right]
+        // 将数组 arr 中的两个有序区间 arr[left, middle] 和 arr[middle + 1, right] 合并调整成一个有序区间 arr[left, right]
         // 只有在左区间存在比右区间大的元素时, 才需要排序
-        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
-            merge(arr, left, mid, right, tmpArr);
+        if (arr[middle].compareTo(arr[middle + 1]) > 0) {
+            merge(arr, left, middle, right, tmpArr);
         }
     }
 
     // 此方法的宏观语义 (建议画图帮助理解):
-    // 将数组 arr 中的两个有序区间 arr[left, mid] 和 arr[mid + 1, right] 合并调整成一个有序区间 arr[left, right]
+    // 将数组 arr 中的两个有序区间 arr[left, middle] 和 arr[middle + 1, right] 合并调整成一个有序区间 arr[left, right]
     // 时间复杂度: O(n)
-    private static <E extends Comparable<E>> void merge(E[] arr, int left, int mid, int right, E[] tmpArr) {
+    private static <E extends Comparable<E>> void merge(E[] arr, int left, int middle, int right, E[] tmpArr) {
 
         // 将 arr 中的区间 arr[left, right] 拷贝到 tmpArr 中同样的区间 tmpArr[left, right]
         // 此逻辑一定要执行, 因为在执行 merge 前, tmpArr 中的区间 tmpArr[left, right] 是无序的
-        // 因此 tmpArr 需要先与 arr 中的两个有序区间 arr[left, mid] 和 arr[mid + 1, right] 保持同步, 才能执行后面的逻辑
+        // 因此 tmpArr 需要先与 arr 中的两个有序区间 arr[left, middle] 和 arr[middle + 1, right] 保持同步, 才能执行后面的逻辑
         // tmpArr[left, right] == arr[left, right]
         System.arraycopy(arr, left, tmpArr, left, right - left + 1);
 
         // t1 和 s2 用于记录 tmpArr 左区间和右区间的当前索引, 初始化为区间的索引起始值
         int t1 = left;
-        int t2 = mid + 1;
+        int t2 = middle + 1;
 
         for (int i = left; i <= right; i++) {
 
-            if (t1 > mid) {
+            if (t1 > middle) {
 
                 // 如果 tmpArr 的左区间 t1 已移动到中间位置后, 说明左区间已全部赋值完成, 则赋值右区间的 t2 值到 arr
                 arr[i] = tmpArr[t2];
