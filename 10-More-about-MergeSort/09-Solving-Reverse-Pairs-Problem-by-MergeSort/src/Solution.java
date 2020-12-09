@@ -9,27 +9,27 @@ public class Solution {
         return res;
     }
 
-    private void sort(int[] nums, int l, int r, int[] tmpNums) {
-        if (l >= r) {
+    private void sort(int[] nums, int left, int right, int[] tmpNums) {
+        if (left >= right) {
             return;
         }
-        int middle = l + (r - l) / 2;
-        sort(nums, l, middle, tmpNums);
-        sort(nums, middle + 1, r, tmpNums);
+        int middle = left + (right - left) / 2;
+        sort(nums, left, middle, tmpNums);
+        sort(nums, middle + 1, right, tmpNums);
         if (nums[middle] > nums[middle + 1]) {
-            merge(nums, l, middle, r, tmpNums);
+            merge(nums, left, middle, right, tmpNums);
         }
     }
 
-    private void merge(int[] nums, int l, int middle, int r, int[] tmpNums) {
-        System.arraycopy(nums, l, tmpNums, l, r - l + 1);
-        int t1 = l;
+    private void merge(int[] nums, int left, int middle, int right, int[] tmpNums) {
+        System.arraycopy(nums, left, tmpNums, left, right - left + 1);
+        int t1 = left;
         int t2 = middle + 1;
-        for (int i = l; i <= r; i++) {
+        for (int i = left; i <= right; i++) {
             if (t1 > middle) {
                 nums[i] = tmpNums[t2];
                 t2++;
-            } else if (t2 > r) {
+            } else if (t2 > right) {
                 nums[i] = tmpNums[t1];
                 t1++;
             } else if (tmpNums[t1] < tmpNums[t2]) {
