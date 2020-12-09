@@ -10,6 +10,7 @@ public class QuickSort {
     public static <E extends Comparable<E>> void sort(E[] arr) {
         // sort1way(arr);
         sort2ways(arr);
+        // sort3ways(arr);
     }
 
     // 快速排序 (单路): 对数组 arr 进行排序
