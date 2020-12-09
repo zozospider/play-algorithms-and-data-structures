@@ -12,7 +12,7 @@ public class Test {
 
             // SelectionSort
             // 时间复杂度: O(n^2)
-            long time = SortingHelper.sort(data, "SelectionSort");
+            long time = SortingHelper.sort(data, SortingHelper.SORT.SELECTION_SORT);
             System.out.println("n: " + n + ", SelectionSort time: " + time + "ms");
         }
     }

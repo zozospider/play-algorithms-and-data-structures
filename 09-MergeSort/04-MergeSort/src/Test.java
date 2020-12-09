@@ -12,7 +12,7 @@ public class Test {
 
             // MergeSort
             // 时间复杂度: O(n^2)
-            long time = SortingHelper.sort(data, "MergeSort");
+            long time = SortingHelper.sort(data, SortingHelper.SORT.MERGE_SORT);
             System.out.println("n: " + n + ", MergeSort time: " + time + "ms");
         }
 

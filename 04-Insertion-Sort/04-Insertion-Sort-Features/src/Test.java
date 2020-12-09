@@ -15,12 +15,12 @@ public class Test {
 
             // SelectionSort
             // 时间复杂度: O(n^2)
-            long timeR1 = SortingHelper.sort(dataR1, "SelectionSort");
+            long timeR1 = SortingHelper.sort(dataR1, SortingHelper.SORT.SELECTION_SORT);
             System.out.println("n: " + n + ", Random Array, SelectionSort time: " + timeR1 + "ms");
 
             // InsertionSort
             // 时间复杂度: O(n^2)
-            long timeR2 = SortingHelper.sort(dataR2, "InsertionSort");
+            long timeR2 = SortingHelper.sort(dataR2, SortingHelper.SORT.INSERTION_SORT);
             System.out.println("n: " + n + ", Random Array, InsertionSort time: " + timeR2 + "ms");
 
             System.out.println("---");
@@ -31,12 +31,12 @@ public class Test {
 
             // SelectionSort
             // 时间复杂度: O(n^2)
-            long timeO1 = SortingHelper.sort(dataO1, "SelectionSort");
+            long timeO1 = SortingHelper.sort(dataO1, SortingHelper.SORT.SELECTION_SORT);
             System.out.println("n: " + n + ", Ordered Array, SelectionSort time: " + timeO1 + "ms");
 
             // InsertionSort
             // 时间复杂度: O(n)
-            long timeO2 = SortingHelper.sort(dataO2, "InsertionSort");
+            long timeO2 = SortingHelper.sort(dataO2, SortingHelper.SORT.INSERTION_SORT);
             System.out.println("n: " + n + ", Ordered Array, InsertionSort time: " + timeO2 + "ms");
 
             System.out.println();

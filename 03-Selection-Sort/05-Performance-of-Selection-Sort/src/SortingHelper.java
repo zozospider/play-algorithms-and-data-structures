@@ -14,13 +14,16 @@ public class SortingHelper {
         return true;
     }
 
+    enum SORT {
+        SELECTION_SORT
+    }
+
     // 测试排序耗时
-    public static <E extends Comparable<E>> long sort(E[] arr, String sortName) {
+    public static <E extends Comparable<E>> long sort(E[] arr, SORT sort) {
         // 记录开始时间 (单位: 毫秒)
         long start = System.currentTimeMillis();
 
-        // 选择排序
-        if ("SelectionSort".equals(sortName)) {
+        if (sort == SORT.SELECTION_SORT) {
             SelectionSort.sort(arr);
         }
 
@@ -28,7 +31,7 @@ public class SortingHelper {
         long end = System.currentTimeMillis();
 
         if (!isSorted(arr)) {
-            throw new RuntimeException(sortName + " failed");
+            throw new RuntimeException(sort + " failed");
         }
         // 返回时间间隔 (单位: 毫秒)
         return end - start;
