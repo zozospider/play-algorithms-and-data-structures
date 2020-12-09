@@ -12,6 +12,8 @@ public class QuickSort {
     }
 
     // 快速排序 (单路): 对数组 arr 中的区间 arr[left, right] 进行排序
+    // 时间复杂度 (期望值): O(n log n) = O(n * 层数(期望值))
+    // 最差复杂度 (数组元素都相同时): O(n^2)
     public static <E extends Comparable<E>> void sort1way(E[] arr, int left, int right) {
         sort1way(arr, left, right, new Random());
     }
