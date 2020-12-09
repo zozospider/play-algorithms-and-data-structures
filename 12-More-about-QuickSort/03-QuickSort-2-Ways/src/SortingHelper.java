@@ -20,6 +20,7 @@ public class SortingHelper {
         INSERTION_SORT,
         INSERTION_SORT_2,
         MERGE_SORT,
+        QUICKSORT,
         QUICKSORT_1_WAY,
         QUICKSORT_2_WAYS
     }
@@ -39,6 +40,8 @@ public class SortingHelper {
             InsertionSort.sort2(arr);
         } else if (sort == SORT.MERGE_SORT) {
             MergeSort.sort(arr);
+        } else if (sort == SORT.QUICKSORT) {
+            QuickSort.sort(arr);
         } else if (sort == SORT.QUICKSORT_1_WAY) {
             QuickSort.sort1way(arr);
         } else if (sort == SORT.QUICKSORT_2_WAYS) {

@@ -4,11 +4,6 @@ public class QuickSort {
     private QuickSort() {
     }
 
-    // 快速排序: 对数组 arr 进行排序
-    public static <E extends Comparable<E>> void sort(E[] arr) {
-        sort1way(arr);
-    }
-
     // 快速排序 (单路): 对数组 arr 进行排序
     public static <E extends Comparable<E>> void sort1way(E[] arr) {
         sort1way(arr, 0, arr.length - 1);
