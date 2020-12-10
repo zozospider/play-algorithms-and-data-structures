@@ -16,17 +16,15 @@ public class SearchHelper {
         // 记录开始时间 (单位: 毫秒)
         long start = System.currentTimeMillis();
 
-        int index = -1;
         if (search == SEARCH.LINEAR_SEARCH) {
-            index = LinearSearch.search(data, target);
+            int index = LinearSearch.search(data, target);
         } else if (search == SEARCH.BINARY_SEARCH) {
-            index = BinarySearch.search(data, target);
+            int index = BinarySearch.search(data, target);
         } else if (search == SEARCH.BINARY_SEARCH_NOT_RECURSION) {
-            index = BinarySearch.searchNotRecursion(data, target);
+            int index = BinarySearch.searchNotRecursion(data, target);
         } else if (search == SEARCH.BINARY_SEARCH_NOT_RECURSION_2) {
-            index = BinarySearch.searchNotRecursion2(data, target);
+            int index = BinarySearch.searchNotRecursion2(data, target);
         }
-        System.out.println(index);
 
         // 记录结束时间 (单位: 毫秒)
         long end = System.currentTimeMillis();
