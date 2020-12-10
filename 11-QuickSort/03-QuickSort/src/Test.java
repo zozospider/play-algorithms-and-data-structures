@@ -31,7 +31,7 @@ public class Test {
             System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeR3 + "ms");
 
             // QuickSort
-            long timeR4 = SortingHelper.sort(dataR4, SortingHelper.SORT.QUICKSORT_1_WAY);
+            long timeR4 = SortingHelper.sort(dataR4, SortingHelper.SORT.QUICK_SORT_1_WAY);
             System.out.println("n: " + n + ", Random Array, QuickSort1Way time: " + timeR4 + "ms");
 
             System.out.println("---");
@@ -59,7 +59,7 @@ public class Test {
 
             // QuickSort
             try {
-                long timeO4 = SortingHelper.sort(dataO4, SortingHelper.SORT.QUICKSORT_1_WAY);
+                long timeO4 = SortingHelper.sort(dataO4, SortingHelper.SORT.QUICK_SORT_1_WAY);
                 System.out.println("n: " + n + ", Ordered Array, QuickSort1Way time: " + timeO4 + "ms");
             } catch (StackOverflowError error) {
                 System.out.println("n: " + n + ", Ordered Array, QuickSort1Way get a StackOverflowError!");

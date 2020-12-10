@@ -20,9 +20,9 @@ public class SortingHelper {
         INSERTION_SORT,
         INSERTION_SORT_2,
         MERGE_SORT,
-        QUICKSORT,
-        QUICKSORT_1_WAY,
-        QUICKSORT_2_WAYS
+        QUICK_SORT,
+        QUICK_SORT_1_WAY,
+        QUICK_SORT_2_WAYS
     }
 
     // 测试排序耗时
@@ -40,11 +40,11 @@ public class SortingHelper {
             InsertionSort.sort2(arr);
         } else if (sort == SORT.MERGE_SORT) {
             MergeSort.sort(arr);
-        } else if (sort == SORT.QUICKSORT) {
+        } else if (sort == SORT.QUICK_SORT) {
             QuickSort.sort(arr);
-        } else if (sort == SORT.QUICKSORT_1_WAY) {
+        } else if (sort == SORT.QUICK_SORT_1_WAY) {
             QuickSort.sort1way(arr);
-        } else if (sort == SORT.QUICKSORT_2_WAYS) {
+        } else if (sort == SORT.QUICK_SORT_2_WAYS) {
             QuickSort.sort2ways(arr);
         }
 

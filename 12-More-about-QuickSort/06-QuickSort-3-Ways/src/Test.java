@@ -33,11 +33,11 @@ public class Test {
             System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeR3 + "ms");
 
             // QuickSort
-            long timeR41 = SortingHelper.sort(dataR41, SortingHelper.SORT.QUICKSORT_1_WAY);
+            long timeR41 = SortingHelper.sort(dataR41, SortingHelper.SORT.QUICK_SORT_1_WAY);
             System.out.println("n: " + n + ", Random Array, QuickSort1Way time: " + timeR41 + "ms");
-            long timeR42 = SortingHelper.sort(dataR42, SortingHelper.SORT.QUICKSORT_2_WAYS);
+            long timeR42 = SortingHelper.sort(dataR42, SortingHelper.SORT.QUICK_SORT_2_WAYS);
             System.out.println("n: " + n + ", Random Array, QuickSort2Ways time: " + timeR42 + "ms");
-            long timeR43 = SortingHelper.sort(dataR43, SortingHelper.SORT.QUICKSORT_3_WAYS);
+            long timeR43 = SortingHelper.sort(dataR43, SortingHelper.SORT.QUICK_SORT_3_WAYS);
             System.out.println("n: " + n + ", Random Array, QuickSort3Ways time: " + timeR43 + "ms");
 
             System.out.println("---");
@@ -66,11 +66,11 @@ public class Test {
             System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeO3 + "ms");
 
             // QuickSort
-            long timeO41 = SortingHelper.sort(dataO41, SortingHelper.SORT.QUICKSORT_1_WAY);
+            long timeO41 = SortingHelper.sort(dataO41, SortingHelper.SORT.QUICK_SORT_1_WAY);
             System.out.println("n: " + n + ", Ordered Array, QuickSort1Way time: " + timeO41 + "ms");
-            long timeO42 = SortingHelper.sort(dataO42, SortingHelper.SORT.QUICKSORT_2_WAYS);
+            long timeO42 = SortingHelper.sort(dataO42, SortingHelper.SORT.QUICK_SORT_2_WAYS);
             System.out.println("n: " + n + ", Ordered Array, QuickSort2Ways time: " + timeO42 + "ms");
-            long timeO43 = SortingHelper.sort(dataO43, SortingHelper.SORT.QUICKSORT_3_WAYS);
+            long timeO43 = SortingHelper.sort(dataO43, SortingHelper.SORT.QUICK_SORT_3_WAYS);
             System.out.println("n: " + n + ", Ordered Array, QuickSort3Ways time: " + timeO43 + "ms");
 
             System.out.println("---");
@@ -100,14 +100,14 @@ public class Test {
 
             // QuickSort
             try {
-                long timeS41 = SortingHelper.sort(dataS41, SortingHelper.SORT.QUICKSORT_1_WAY);
+                long timeS41 = SortingHelper.sort(dataS41, SortingHelper.SORT.QUICK_SORT_1_WAY);
                 System.out.println("n: " + n + ", Same Value Array, QuickSort1Way time: " + timeS41 + "ms");
             } catch (StackOverflowError error) {
                 System.out.println("n: " + n + ", Same Value Array, QuickSort1Way get a StackOverflowError!");
             }
-            long timeS42 = SortingHelper.sort(dataS42, SortingHelper.SORT.QUICKSORT_2_WAYS);
+            long timeS42 = SortingHelper.sort(dataS42, SortingHelper.SORT.QUICK_SORT_2_WAYS);
             System.out.println("n: " + n + ", Same Value Array, QuickSort2Ways time: " + timeS42 + "ms");
-            long timeS43 = SortingHelper.sort(dataS43, SortingHelper.SORT.QUICKSORT_3_WAYS);
+            long timeS43 = SortingHelper.sort(dataS43, SortingHelper.SORT.QUICK_SORT_3_WAYS);
             System.out.println("n: " + n + ", Same Value Array, QuickSort3Ways time: " + timeS43 + "ms");
 
             System.out.println();

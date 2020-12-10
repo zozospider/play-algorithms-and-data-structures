@@ -32,9 +32,9 @@ public class Test {
             System.out.println("n: " + n + ", Random Array, MergeSort time: " + timeR3 + "ms");
 
             // QuickSort
-            long timeR4 = SortingHelper.sort(dataR4, SortingHelper.SORT.QUICKSORT_1_WAY);
+            long timeR4 = SortingHelper.sort(dataR4, SortingHelper.SORT.QUICK_SORT_1_WAY);
             System.out.println("n: " + n + ", Random Array, QuickSort1Way time: " + timeR4 + "ms");
-            long timeR5 = SortingHelper.sort(dataR5, SortingHelper.SORT.QUICKSORT_2_WAYS);
+            long timeR5 = SortingHelper.sort(dataR5, SortingHelper.SORT.QUICK_SORT_2_WAYS);
             System.out.println("n: " + n + ", Random Array, QuickSort2Ways time: " + timeR5 + "ms");
 
             System.out.println("---");
@@ -62,9 +62,9 @@ public class Test {
             System.out.println("n: " + n + ", Ordered Array, MergeSort time: " + timeO3 + "ms");
 
             // QuickSort
-            long timeO4 = SortingHelper.sort(dataO4, SortingHelper.SORT.QUICKSORT_1_WAY);
+            long timeO4 = SortingHelper.sort(dataO4, SortingHelper.SORT.QUICK_SORT_1_WAY);
             System.out.println("n: " + n + ", Ordered Array, QuickSort1Way time: " + timeO4 + "ms");
-            long timeO5 = SortingHelper.sort(dataO5, SortingHelper.SORT.QUICKSORT_2_WAYS);
+            long timeO5 = SortingHelper.sort(dataO5, SortingHelper.SORT.QUICK_SORT_2_WAYS);
             System.out.println("n: " + n + ", Ordered Array, QuickSort2Ways time: " + timeO5 + "ms");
 
             System.out.println("---");
@@ -93,12 +93,12 @@ public class Test {
 
             // QuickSort
             try {
-                long timeS4 = SortingHelper.sort(dataS4, SortingHelper.SORT.QUICKSORT_1_WAY);
+                long timeS4 = SortingHelper.sort(dataS4, SortingHelper.SORT.QUICK_SORT_1_WAY);
                 System.out.println("n: " + n + ", Same Value Array, QuickSort1Way time: " + timeS4 + "ms");
             } catch (StackOverflowError error) {
                 System.out.println("n: " + n + ", Same Value Array, QuickSort1Way get a StackOverflowError!");
             }
-            long timeS5 = SortingHelper.sort(dataS5, SortingHelper.SORT.QUICKSORT_2_WAYS);
+            long timeS5 = SortingHelper.sort(dataS5, SortingHelper.SORT.QUICK_SORT_2_WAYS);
             System.out.println("n: " + n + ", Same Value Array, QuickSort2Ways time: " + timeS5 + "ms");
 
             System.out.println();
