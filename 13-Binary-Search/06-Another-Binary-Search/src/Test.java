@@ -11,8 +11,8 @@ public class Test {
 
             // 生成一个长度为 n 的有序数组
             Integer[] data = ArrayGenerator.generateOrderedArray(n);
-            // int target = new Random().nextInt(data.length);
-            int target = data.length;
+            // int target = data.length;
+            int target = new Random().nextInt(data.length);
 
             // LinearSearch
             // 时间复杂度: O(n)
